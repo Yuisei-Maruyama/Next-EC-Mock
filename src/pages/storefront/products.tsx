@@ -58,6 +58,15 @@ export default function ProductsPage() {
     setOpen(true)
   }
 
+  const filterDialogProps = {
+    open,
+    setOpen,
+    freeShippingOnly,
+    handleCheckboxChange,
+    selected,
+    handleSelectChange,
+  }
+
   return (
     <>
       <Box
@@ -98,14 +107,7 @@ export default function ProductsPage() {
           フィルター
         </Button>
       </Box>
-      <FilterDialog
-        open={open}
-        setOpen={setOpen}
-        freeShippingOnly
-        handleCheckboxChange={handleCheckboxChange}
-        selected={selected}
-        handleSelectChange={handleSelectChange}
-      />
+      <FilterDialog {...filterDialogProps} />
       <Grid container spacing={4} style={{ margin: 'auto', maxWidth: '90%' }}>
         {data?.products.nodes.map((node) => (
           <Grid item key={node.id} xs={12} sm={6} md={3}>

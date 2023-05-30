@@ -43,6 +43,11 @@ type Product = {
 
 type ProductsResult = {
   nodes: Product[]
+  pageInfo: {
+    hasNextPage: boolean
+    hasPreviousPage: boolean
+    totalPages: number
+  }
 }
 
 export type QueryResult = {
