@@ -22,6 +22,7 @@ import { QueryResult } from '@/types/storefront/product'
 import SearchInput from '@/components/Input/SearchInput'
 import FilterIcon from '@/components/Icon/FilterIcon'
 import FilterDialog from '@/components/Dialog/FilterDialog'
+import MantineCard from '@/components/Card/MantaineCard'
 
 export default function ProductsPage() {
   const [freeShippingOnly, setFreeShippingOnly] = useState(false)
@@ -156,6 +157,9 @@ export default function ProductsPage() {
             </Card>
           </Grid>
         ))}
+        <Grid item key={1} xs={12} sm={6} md={3}>
+          <MantineCard />
+        </Grid>
       </Grid>
     </>
   )
